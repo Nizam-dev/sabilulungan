@@ -12,7 +12,7 @@
                     </li>
                 </ul>
                 <!-- social-links -->
-                <p class="copyright">Pemerintah Kota Mempawah © 2018</p>
+                <p class="copyright">Pemerintah Kota Mempawah © <?= date("Y") ?></p>
 
                 <!-- Start of StatCounter Code for Default Guide -->
                 <div style="text-align:center;margin-top:12px;color:#FFF;font-size:14px">

@@ -21,6 +21,15 @@
         <?= $this->include('template/navbar') ?>
 
         <div role="main" class="content-main">
+            <?php
+    
+        if(session()->getFlashdata('error')){
+            echo '<div class="alert-bar alert-bar-failed" style="width:100%">'.session()->getFlashdata('error').'</div>';
+        }       
+        if(session()->getFlashdata('success')){
+            echo '<div class="alert-bar alert-bar-success" style="width:100%">'.session()->getFlashdata('success').'</div>';
+        }             
+        ?>
             <?= $this->renderSection('content') ?>
         </div>
 
