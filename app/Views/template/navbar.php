@@ -35,6 +35,9 @@
                         <a class="link-blue" href="<?= base_url('proposal') ?>">Proposal Hibah</a>
                     </li>
                     <!-- Guest -->
+                    <?php if(session()->name ){ ?>
+
+                    <?php } else { ?>
                     <li>
                         <a class="link-purple" href="<?= base_url('peraturan') ?>">Peraturan</a>
                     </li>
@@ -47,6 +50,7 @@
                     <li>
                         <a class="link-purple" href="<?= base_url('pengumuman') ?>">Pengumuman</a>
                     </li>
+                    <?php } ?>
                     <!-- Guest -->
             </nav>
             <!-- nav-main -->
@@ -59,13 +63,21 @@
                     <img src="<?= base_url('public/media/logo/logo-bandung.png') ?>" alt="">
                 </a>
 
+
+
+                <?php if(session()->name){ ?>
+                <a class="logo-bandung" href="<?= base_url('logout') ?>" style="margin-top:3px;margin-right:10px"
+                    onclick="return confirm('Apakah Anda Yakin Akan Keluar ?')" alt="Sign Out">
+                    <img src="<?= base_url('public/template/img/btn-user.png') ?>" alt="">
+                </a>
+                <?php  }else{ ?>
                 <a class="logo-bandung" href="<?= base_url('login') ?>" style="margin-top:3px;margin-right:10px"
                     alt="Sign In">
                     <img src="<?= base_url('public/template/img/btn-user.png') ?>">
                 </a>
-
+                <?php } ?>
             </div>
             <!-- nav-user -->
         </div>
-    
+
     </header>
