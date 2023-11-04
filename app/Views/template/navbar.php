@@ -35,9 +35,17 @@
                         <a class="link-blue" href="<?= base_url('proposal') ?>">Proposal Hibah</a>
                     </li>
                     <!-- Guest -->
-                    <?php if(session()->name ){ ?>
-
-                    <?php } else { ?>
+                    <?php if(session()->name ){ 
+                             if(session()->role_id==6) echo '<li><a class="link-purple" href="'.base_url('hibah').'">Mendaftar Hibah Bansos</a></li><li><a class="link-purple" href="'.base_url('lpj').'">LPJ</a></li> ';
+                                elseif(session()->role_id==5) echo '<li><a class="link-purple" href="'.base_url('hibah').'">Daftar</a></li><li><a class="link-purple" href="'.base_url('report').'">Pengecekan Berkas</a></li> ';
+                                elseif(session()->role_id==4) echo '<li><a class="link-purple" href="'.base_url('report').'">Pemilihan SKPD dan Verifikasi</a></li> ';
+                                elseif(session()->role_id==3) echo '<li><a class="link-purple" href="'.base_url('report').'">Pemberian Rekomendasi</a></li> ';
+                                elseif(session()->role_id==2) echo '<li><a class="link-purple" href="'.base_url('report').'">Verifikasi</a></li><li><a class="link-purple" href="'.base_url('tapd/generate').'">Generate</a></li> ';
+                                elseif(session()->role_id==1) echo '<li><a class="link-purple" href="'.base_url('report').'">Pemeriksaan Proposal</a></li> ';
+                                elseif(session()->role_id==7) echo '<li><a class="link-purple" href="'.base_url('hibah').'">Daftar Hibah</a></li><li><a class="link-purple" href="'.base_url('report').'">Pemeriksaan</a></li> ';
+                                elseif(session()->role_id==8) echo '<li><a class="link-purple" href="'.base_url('input').'">Mendaftar Hibah Masuk</a></li> ';
+                                elseif(session()->role_id==9) echo '<li><a class="link-purple" href="'.base_url('report').'">Koreksi</a></li><li><a class="link-purple" href="'.base_url('cms').'">CMS</a></li><li><a class="link-purple" href="'.base_url('realisasi').'">Laporan</a></li> ';
+                     } else { ?>
                     <li>
                         <a class="link-purple" href="<?= base_url('peraturan') ?>">Peraturan</a>
                     </li>
